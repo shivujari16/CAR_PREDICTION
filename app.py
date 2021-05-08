@@ -19,7 +19,7 @@ list2 = ['rwd', 'fwd', '4wd']
 
 list3 = ['front', 'rear']
 
-@app.route('/predict',methods=['GET'])
+@app.route('/predict',methods=['POST'])
 def predict():
     
     searchValue = request.form['CarName']

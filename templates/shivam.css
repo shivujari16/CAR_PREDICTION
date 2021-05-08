@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main_banner{
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5))
+    ,url(static/image/main3.jpg) center/100% 100% fixed no-repeat;
+} 
+.n1{
+    padding: 0 60px;
+    border: 2px solid black;
+}  
+ h1{
+    padding-top: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: yellow;
+}
+table{
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+td{
+    padding-right: 4px;
+}
+.mybtn{
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 5px 0;
+}

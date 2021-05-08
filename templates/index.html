@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>CAR API</title>
+
+  <style>
+    /* CSS code for button */
+    body {
+      background-image: url('static/images/main3.jpg');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+    }
+
+    /* CSS code for button */
+    .button_css {
+    color: #494949 !important;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: #ffffff;
+    padding: 20px;
+    border: 4px solid #494949 !important;
+    display: inline-block;
+    transition: all 0.4s ease 0s;
+    }
+    
+    .button_css:hover {
+    color: #ffffff !important;
+    background: #f6b93b;
+    border-color: #f6b93b !important;
+    transition: all 0.4s ease 0s;
+    }
+  </style>
+
+</head>
+
+<body>
+
+<div>
+
+
+ 
+ 
+ <div class="login">
+	
+    <!-- Get input for predict the cancer -->
+    <center>
+    <form action="{{ url_for('predict')}}"method="post">
+        <h1 style="color:yellow;">Enter the value of features:</h1>
+    	
+    	<br />
+    	<input type="text" name="CarName" placeholder="Car Name" required="required" />
+        <input type="text" name="drivewheel" placeholder="wheel" required="required" />
+		<input type="text" name="enginelocation" placeholder="engine location" required="required" />
+		<input type="text" name="wheelbase" placeholder="wheel base" required="required" />
+        <input type="text" name="carlength" placeholder="carlength" required="required" />
+		<input type="text" name="carwidth" placeholder="carwidth" required="required" />
+		<br>
+    	<input type="text" name="curbweight" placeholder="curbweight" required="required" />
+        <input type="text" name="cylindernumber" placeholder="cylindernumber" required="required" />
+		<input type="text" name="enginesize" placeholder="enginesize" required="required" />
+    	<input type="text" name="boreratio" placeholder="boreratio" required="required" />
+        <input type="text" name="horsepower" placeholder="horsepower" required="required" />
+		<input type="text" name="citympg" placeholder="citympg" required="required" />
+    	<input type="text" name="highwaympg" placeholder="highwaympg" required="required" />
+        <br>
+        
+        <!-- Show button -->
+        <div class="button_cont" align="center"><a class="button_css"  rel="nofollow noopener">
+            <button type="submit" class="btn btn-primary btn-block btn-large"><strong>Predict Price</strong></button></a>
+        </div>
+        
+    </form>
+    </center>
+   
+   <!-- Show predicted output using ML model --> 
+   <div>
+       <center>
+   <h1 style="color:yellow;">{{ prediction_text }}</h1>
+       </center>
+   </div>
+
+ </div>
+
+</body>
+</html>

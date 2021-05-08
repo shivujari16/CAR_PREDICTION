@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAR API</title>
+    <style>
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main_banner{
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5))
+    ,url(static/images/black10.jpg) center/100% 100% fixed no-repeat;
+} 
+.n1{
+    padding: 0 60px;
+    border: 2px solid black;
+}  
+ h1{
+    padding-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: yellow;
+}
+table{
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+td{
+    padding-right: 4px;
+}
+.mybtn{
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 5px 0;
+}
+
+</style>
+</head>
+<body>
+    <div class="main_banner">
+            <h1>CAR PRICE PREDICTION</h1>
+            <h1>Enter the value of features:</h1>
+            <form action="{{ url_for('predict')}}"method="post">
+                    <table>    
+                <tr>           
+                <td>      
+                       <select name="CarName" id="n1">
+                       <pre> <option value="alfa">alfa &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </pre></option>
+                        <option value="audi">audi</option>
+                        <option value="bmw">bmw</option>
+                        <option value="chevrolet">chevrolet</option>
+                        <option value="dodge">dodge</option>
+                        <option value="honda">honda</option>
+                        <option value="isuzu">isuzu</option>
+                        <option value="jaguar">jaguar</option>
+                        <option value="mazda">mazda</option>
+                        <option value="buick">buick</option>
+                        <option value="mercury">mercury</option>
+                        <option value="mitsubishi">mitsubishi</option>
+                        <option value="nissan">nissan</option>
+                        <option value="peugeot">peugeot</option>
+                        <option value="plymouth">plymouth</option>
+                        <option value="porsche">porsche</option>
+                        <option value="renault">renault</option>
+                        <option value="saab">saab</option>
+                        <option value="subaru">subaru</option>
+                        <option value="toyota">toyota</option>
+                        <option value="volkswagen">volkswagen</option>
+                        <option value="volvo">volvo</option>
+                    </select>  
+                  <!-- <input  type="text" name="CarName" placeholder="car">  --> 
+                </td>
+                <td>
+                    <input  type="text" name="drivewheel" placeholder="wheel(rwd,fwd,4wd)" required="required">
+                </td>
+                </tr>
+                <tr>
+                    <td><input  type="text" name="enginelocation" placeholder="enginelocation(front,rear)" required="required">                
+                    </td>
+                    <td><input  type="text" name="wheelbase" placeholder="wheel base" required="required"></td>
+                </tr>
+                <tr>
+                <td>
+                    <input  type="text"  name="carlength" placeholder="carlength" required="required">               
+                </td>
+                <td><input  type="text" name="carwidth" placeholder="carwidth" required="required"></td>
+                </tr>
+                <tr>
+                    <td>
+                    <input  type="text" name="curbweight" placeholder="curbweight" required="required">
+                </td>
+                <td>    <input  type="text" name="cylindernumber" placeholder="cylinder no.(2,3,4,5,6,8,12)" required="required">
+                </td>
+                </tr>
+                <tr>
+                    <td>
+                    <input  type="text" name="enginesize" placeholder="enginesize" required="required">               
+                </td>
+                <td>
+                    <input  type="text" name="boreratio" placeholder="boreratio" required="required">
+                </td>
+                </tr>
+                <tr>
+                    <td>
+                    <input  type="text" name="horsepower" placeholder="horsepower" required="required"></td>
+                    <td><input  type="text" name="citympg" placeholder="citympg" required="required"></td>
+                </tr>
+                </div>
+                </table>
+                <table>
+                    <tr>
+                        <td id="last"><input  type="text" name="highwaympg" placeholder="highwaympg" required="required"></td>
+                    </tr>    
+                </table>
+                   <div class="mybtn">
+                       <button type="submit" class="btn btn-primary btn-block btn-large"><strong>Predict Price</strong></button>
+                   </div>
+                </form>
+                
+                <div>
+                   <center>
+                       <h1>{{ prediction_text }}</h1>
+                   </center>
+                </div>
+             
+    </div>
+</body>
+</html>
